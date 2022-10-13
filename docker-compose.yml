@@ -1,0 +1,18 @@
+version: "3.2"
+services:
+  frontend:
+  image: marcustechstarter/frontend-contmw:latest
+    build: ./marcustechstarter/frontend-contmw
+    depends_on:
+      - marcustechstarter/demo_backendnodejsmw
+    ports:
+      - "5000:5000"
+    
+  backend:
+  image: marcustechstarter/demo_backendnodejsmw:latest
+    build: marcustechstarter/demo_backendnodejsmw
+    build: ./backend
+  
+    ports:
+     - "5000:5000"
+  
